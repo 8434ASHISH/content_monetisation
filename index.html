@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Content Monetisation</title>
+<title>Viralmonet</title>
 </head>
+
 <body style="text-align:center;font-family:Arial;padding:40px">
 
-<h1>🚀 Content Monetisation</h1>
-<p>Paste any Instagram, YouTube, TikTok, Facebook or Telegram link</p>
+<h1>🚀 Viralmonet</h1>
+<p>Paste any Instagram, YouTube, TikTok, Facebook, Telegram or Website link</p>
 
-<input id="url" style="width:80%;padding:12px" placeholder="Paste your link here">
+<input id="url" placeholder="Paste your link here"
+style="width:80%;padding:12px">
 
 <br><br>
 <button onclick="boost()">Generate Boost Link</button>
@@ -17,15 +19,15 @@
 
 <script>
 function boost(){
- fetch("PASTE_N8N_WEBHOOK_HERE",{
+ fetch("PASTE_N8N_WEBHOOK",{
   method:"POST",
   headers:{ "Content-Type":"application/json" },
   body:JSON.stringify({ url: document.getElementById("url").value })
  })
  .then(r=>r.json())
  .then(d=>{
-  document.getElementById("result").innerHTML =
-  "Your boost link:<br><a href='"+d.link+"'>"+d.link+"</a>";
+   document.getElementById("result").innerHTML =
+   "Your Viral Link:<br><a href='"+d.link+"'>"+d.link+"</a>";
  });
 }
 </script>
